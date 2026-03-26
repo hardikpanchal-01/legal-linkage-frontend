@@ -1,65 +1,172 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useState } from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Footer } from "@/components/footer";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
+type Role = "provider" | "client";
+
+export default function SelectRole() {
+  const [selectedRole, setSelectedRole] = useState<Role | null>(null);
+  const [showDialog, setShowDialog] = useState(false);
+  const router = useRouter();
+
+  const handleContinue = () => {
+    if (!selectedRole) return;
+    setShowDialog(true);
+  };
+
+  const handleDialogContinue = () => {
+    setShowDialog(false);
+    if (selectedRole === "provider") {
+      router.push("/register/provider-type");
+    } else {
+      router.push("/register/service-type");
+    }
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex min-h-screen flex-col bg-gradient-to-b from-[#FFF8E7] to-[#FDF5E6]">
+      {/* Main content */}
+      <div className="flex flex-1 flex-col items-center px-4 pt-12 pb-8 sm:px-8">
+        {/* Logo */}
+        <div className="mb-6">
+          <Image
+            src="/images/logo.svg"
+            alt="ClientLawyerLink Logo"
+            width={70}
+            height={84}
+            priority
+          />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        {/* Welcome text */}
+        <h1 className="mb-3 text-center text-2xl font-bold text-[#1B2A4A] sm:text-3xl">
+          Welcome to
+          <br />
+          ClientLawyerLink.com
+        </h1>
+        <p className="mb-8 max-w-md text-center text-sm leading-relaxed text-[#4A4A4A] sm:text-base">
+          This platform is a professional network that connects verified
+          clients with vetted lawyers authorized to provide legal services to
+          the public throughout Canada.
+        </p>
+
+        {/* Select one */}
+        <p className="mb-6 text-sm text-[#6B7280]">Select one</p>
+
+        {/* Role cards */}
+        <div className="mb-8 grid w-full max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2">
+          {/* Legal Service Provider Card */}
+          <button
+            type="button"
+            onClick={() => setSelectedRole("provider")}
+            className={`group cursor-pointer rounded-2xl border-2 bg-white p-6 text-center shadow-md transition-all hover:shadow-lg ${
+              selectedRole === "provider"
+                ? "border-[#1B2A4A] ring-2 ring-[#1B2A4A]/20"
+                : "border-transparent"
+            }`}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <h3 className="mb-4 text-sm font-semibold text-[#1B2A4A]">
+              I&apos;m a Legal service provider
+            </h3>
+            <div className="mb-4 flex justify-center">
+              <Image
+                src="/images/lawyer-illustration.svg"
+                alt="Legal service provider"
+                width={180}
+                height={150}
+              />
+            </div>
+            <p className="text-xs text-[#6B7280]">
+              Find work and manage your Law business
+            </p>
+          </button>
+
+          {/* Client Card */}
+          <button
+            type="button"
+            onClick={() => setSelectedRole("client")}
+            className={`group cursor-pointer rounded-2xl border-2 bg-white p-6 text-center shadow-md transition-all hover:shadow-lg ${
+              selectedRole === "client"
+                ? "border-[#1B2A4A] ring-2 ring-[#1B2A4A]/20"
+                : "border-transparent"
+            }`}
           >
-            Documentation
-          </a>
+            <h3 className="mb-4 text-sm font-semibold text-[#1B2A4A]">
+              I&apos;m a Client
+            </h3>
+            <div className="mb-4 flex justify-center">
+              <Image
+                src="/images/client-illustration.svg"
+                alt="Client"
+                width={220}
+                height={150}
+              />
+            </div>
+            <p className="text-xs text-[#6B7280]">
+              Post jobs and reach lawyers
+            </p>
+          </button>
         </div>
-      </main>
+
+        {/* Continue button */}
+        <Button
+          onClick={handleContinue}
+          disabled={!selectedRole}
+          className="h-12 rounded-full bg-[#1B2A4A] px-10 text-sm font-medium text-white hover:bg-[#2A3D66] disabled:opacity-40"
+        >
+          Continue
+          <ArrowRight className="ml-2 size-4" />
+        </Button>
+      </div>
+
+      <Footer />
+
+      {/* Registration Disclaimer Dialog */}
+      <Dialog open={showDialog} onOpenChange={setShowDialog}>
+        <DialogContent className="max-w-lg rounded-2xl border-none bg-white p-8 shadow-2xl sm:max-w-md">
+          <DialogTitle className="sr-only">Registration Disclaimer</DialogTitle>
+          <div className="space-y-5 text-center">
+            <p className="text-sm font-semibold leading-relaxed text-[#1B2A4A]">
+              Registration is intended only for individuals with genuine legal
+              needs and licensed legal professionals seeking to assist them.
+            </p>
+            <p className="text-sm leading-relaxed text-[#4A4A4A]">
+              To maintain the integrity and trust of our network, all clients
+              will undergo identity verification, and all lawyers will be
+              professionally vetted before activation.
+            </p>
+            <p className="text-sm font-semibold leading-relaxed text-[#1B2A4A]">
+              Please complete this form accurately — your information helps
+              ensure a safe, credible, and respectful legal community.
+            </p>
+          </div>
+          <div className="mt-6 flex items-center justify-center gap-3">
+            <Button
+              variant="outline"
+              onClick={() => setShowDialog(false)}
+              className="h-10 rounded-lg border-[#1B2A4A] px-6 text-sm text-[#1B2A4A] hover:bg-[#1B2A4A]/5"
+            >
+              Cancel
+            </Button>
+            <Button
+              onClick={handleDialogContinue}
+              className="h-10 rounded-lg bg-[#E9A319] px-6 text-sm font-medium text-white hover:bg-[#D4920F]"
+            >
+              Continue
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
