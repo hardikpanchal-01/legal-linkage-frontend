@@ -87,7 +87,6 @@ export default function ProviderIndividualAddress() {
                 id="streetAddress"
                 name="streetAddress"
                 placeholder="Your Street Address"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <MapPin className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />
@@ -104,7 +103,6 @@ export default function ProviderIndividualAddress() {
                 id="apartment"
                 name="apartment"
                 placeholder="Apartment/Unit #"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <MapPin className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />
@@ -121,7 +119,6 @@ export default function ProviderIndividualAddress() {
                 id="city"
                 name="city"
                 placeholder="Please enter here"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <MapPin className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />
@@ -133,7 +130,7 @@ export default function ProviderIndividualAddress() {
             <Label className="mb-2 text-sm font-medium text-[#1B2A4A]">
               Province/Territory <span className="text-red-500">*</span>
             </Label>
-            <Select name="province" required>
+            <Select name="province">
               <SelectTrigger className="h-11 rounded-lg border-[#D1D5DB] text-sm text-[#9CA3AF] data-[state=open]:text-[#1B2A4A]">
                 <SelectValue placeholder="Select your Province/Territory" />
               </SelectTrigger>
@@ -157,7 +154,6 @@ export default function ProviderIndividualAddress() {
                 id="postalCode"
                 name="postalCode"
                 placeholder="Postal Code"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <MapPin className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />

@@ -127,7 +127,6 @@ export default function CreateAccountOrg() {
                 id="orgName"
                 name="orgName"
                 placeholder="Registered organization name"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <Building2 className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />
@@ -144,7 +143,6 @@ export default function CreateAccountOrg() {
                 id="contactName"
                 name="contactName"
                 placeholder="Full Name"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <User className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />

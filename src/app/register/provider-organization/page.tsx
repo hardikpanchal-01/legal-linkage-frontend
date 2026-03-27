@@ -97,7 +97,6 @@ export default function ProviderOrganization() {
                 id="fullName"
                 name="fullName"
                 placeholder="Full Name (as per license)"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <User className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />
@@ -114,7 +113,6 @@ export default function ProviderOrganization() {
                 id="middleName"
                 name="middleName"
                 placeholder="middle name"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <User className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />
@@ -131,7 +129,6 @@ export default function ProviderOrganization() {
                 id="firmName"
                 name="firmName"
                 placeholder="Registered name"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <Building2 className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />
@@ -148,7 +145,6 @@ export default function ProviderOrganization() {
                 id="licenseNumber"
                 name="licenseNumber"
                 placeholder="License Number / Bar Council ID"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <CreditCard className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />
@@ -160,7 +156,7 @@ export default function ProviderOrganization() {
             <Label className="mb-2 text-sm font-medium text-[#1B2A4A]">
               Practice Area <span className="text-red-500">*</span>
             </Label>
-            <Select name="practiceArea" required>
+            <Select name="practiceArea">
               <SelectTrigger className="h-11 rounded-lg border-[#D1D5DB] text-sm text-[#9CA3AF] data-[state=open]:text-[#1B2A4A]">
                 <SelectValue placeholder="Select your practice areas" />
               </SelectTrigger>
@@ -184,7 +180,6 @@ export default function ProviderOrganization() {
                 id="experience"
                 name="experience"
                 placeholder="Enter years of experience"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <Clock className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />

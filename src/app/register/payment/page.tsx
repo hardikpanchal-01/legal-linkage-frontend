@@ -46,7 +46,7 @@ export default function Payment() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push("/register/verification");
+    router.push("/register/provider-bid-coins");
   };
 
   return (

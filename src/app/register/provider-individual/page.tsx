@@ -62,7 +62,6 @@ export default function ProviderIndividual() {
                 id="fullName"
                 name="fullName"
                 placeholder="Full Name (as per license)"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <User className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />
@@ -79,7 +78,6 @@ export default function ProviderIndividual() {
                 id="middleName"
                 name="middleName"
                 placeholder="middle name"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <User className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />
@@ -97,7 +95,6 @@ export default function ProviderIndividual() {
                 name="phone"
                 type="tel"
                 placeholder="Please enter your Primary Phone Number"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <Phone className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />
@@ -132,7 +129,6 @@ export default function ProviderIndividual() {
                 name="email"
                 type="email"
                 placeholder="Your email address"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <Mail className="absolute top-1/2 right-3 size-4 -translate-y-1/2 text-[#9CA3AF]" />
@@ -148,7 +144,6 @@ export default function ProviderIndividual() {
               id="bio"
               name="bio"
               placeholder="Provide a brief bio — it will be visible on your profile to help clients and colleagues understand your background."
-              required
               rows={4}
               className="w-full resize-y rounded-lg border border-[#D1D5DB] px-3 py-2.5 text-sm placeholder:text-[#9CA3AF] focus:border-[#1B2A4A] focus:ring-1 focus:ring-[#1B2A4A] focus:outline-none"
             />

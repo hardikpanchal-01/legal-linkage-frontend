@@ -57,7 +57,6 @@ export default function SetupPassword() {
                 name="password"
                 type={showPassword ? "text" : "password"}
                 placeholder="************"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <button
@@ -104,7 +103,6 @@ export default function SetupPassword() {
                 name="confirmPassword"
                 type={showConfirmPassword ? "text" : "password"}
                 placeholder="************"
-                required
                 className="h-11 rounded-lg border-[#D1D5DB] pr-10 text-sm placeholder:text-[#9CA3AF]"
               />
               <button
