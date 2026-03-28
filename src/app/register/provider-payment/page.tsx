@@ -41,12 +41,12 @@ const securityFeatures = [
   },
 ];
 
-export default function Payment() {
+export default function ProviderPayment() {
   const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push("/register/verification");
+    router.push("/register/provider-bid-coins");
   };
 
   return (

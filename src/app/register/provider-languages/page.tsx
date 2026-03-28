@@ -28,7 +28,7 @@ export default function ProviderLanguages() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push("/register/payment");
+    router.push("/register/provider-payment");
   };
 
   return (

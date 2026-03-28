@@ -16,8 +16,8 @@ export default function Login() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: Handle login
-    console.log("Login submitted");
+    // TODO: Handle login with API
+    router.push("/admin/dashboard");
   };
 
   return (
