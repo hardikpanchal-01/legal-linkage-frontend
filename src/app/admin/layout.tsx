@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import {
   LayoutDashboard,
   Users,
@@ -27,7 +28,17 @@ const sidebarItems = [
   { label: "Dispute Management", icon: ShieldAlert, href: "/admin/disputes" },
   { label: "Jobs Management", icon: Briefcase, href: "/admin/jobs" },
   { label: "Payments", icon: CreditCard, href: "/admin/payments" },
-  { label: "Fees Schedules", icon: CalendarCog, href: "/admin/fees", hasChevron: true },
+];
+
+const feesSubItems = [
+  { label: "Zoom Subscriptions", href: "/admin/fees-schedules/zoom-subscriptions" },
+  { label: "Registration Fees", href: "/admin/fees-schedules/registration-fees" },
+  { label: "Territory Taxes", href: "/admin/fees-schedules/territory-taxes" },
+  { label: "DAP Fee Structure", href: "/admin/fees-schedules/dap-fee-structure" },
+  { label: "Job Fee Structure", href: "/admin/fees-schedules/job-fee-structure" },
+];
+
+const bottomItems = [
   { label: "Reports & Analysis", icon: BarChart3, href: "/admin/reports" },
   { label: "Reviews & Rating", icon: Star, href: "/admin/reviews" },
   { label: "Forms CMS", icon: FileText, href: "/admin/forms" },
@@ -40,6 +51,8 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const [feesOpen, setFeesOpen] = useState(pathname.startsWith("/admin/fees-schedules"));
+  const [profileOpen, setProfileOpen] = useState(false);
 
   return (
     <div className="flex h-screen overflow-hidden bg-gray-100">
@@ -64,7 +77,6 @@ export default function AdminLayout({
           {sidebarItems.map((item) => {
             const isActive = pathname === item.href || pathname?.startsWith(item.href + "/");
             const Icon = item.icon;
-
             return (
               <Link
                 key={item.label}
@@ -77,9 +89,57 @@ export default function AdminLayout({
               >
                 <Icon size={18} />
                 <span className="flex-1">{item.label}</span>
-                {"hasChevron" in item && item.hasChevron && (
-                  <ChevronDown size={14} />
-                )}
+              </Link>
+            );
+          })}
+
+          {/* Fees Schedules (collapsible) */}
+          <button
+            type="button"
+            onClick={() => setFeesOpen(!feesOpen)}
+            className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-colors ${
+              pathname.startsWith("/admin/fees-schedules")
+                ? "bg-white/15 text-white font-medium"
+                : "text-white/70 hover:bg-white/10 hover:text-white"
+            }`}
+          >
+            <CalendarCog size={18} />
+            <span className="flex-1 text-left">Fees Schedules</span>
+            {feesOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+          </button>
+          {feesOpen && (
+            <div className="ml-8 space-y-0.5">
+              {feesSubItems.map((sub) => (
+                <Link
+                  key={sub.label}
+                  href={sub.href}
+                  className={`block rounded-lg px-3 py-2 text-xs transition-colors ${
+                    pathname === sub.href
+                      ? "text-white font-medium"
+                      : "text-white/50 hover:text-white/80"
+                  }`}
+                >
+                  {sub.label}
+                </Link>
+              ))}
+            </div>
+          )}
+
+          {bottomItems.map((item) => {
+            const isActive = pathname === item.href;
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-colors ${
+                  isActive
+                    ? "bg-white/15 text-white font-medium"
+                    : "text-white/70 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                <Icon size={18} />
+                <span className="flex-1">{item.label}</span>
               </Link>
             );
           })}
@@ -87,11 +147,11 @@ export default function AdminLayout({
 
         {/* Logout */}
         <div className="border-t border-white/10 px-3 py-3">
-          <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-white/70 hover:bg-white/10 hover:text-white transition-colors">
+          <Link href="/admin-login" className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-white/70 hover:bg-white/10 hover:text-white transition-colors">
             <LogOut size={18} />
             <span className="flex-1 text-left">Logout</span>
             <ChevronUp size={14} />
-          </button>
+          </Link>
         </div>
       </aside>
 
@@ -114,22 +174,46 @@ export default function AdminLayout({
 
           {/* Right side */}
           <div className="flex items-center gap-4">
-            <button className="relative text-white/80 hover:text-white">
+            <Link href="/admin/notifications" className="relative text-white/80 hover:text-white">
               <Bell size={20} />
               <span className="absolute -right-1 -top-1 flex h-2 w-2 rounded-full bg-red-500" />
-            </button>
+            </Link>
 
-            <div className="flex items-center gap-3">
-              <div className="h-9 w-9 rounded-full bg-gray-300 overflow-hidden">
-                <div className="flex h-full w-full items-center justify-center bg-amber-100 text-sm font-semibold text-[#1B2A4A]">
-                  A
+            <div className="relative">
+              <button
+                onClick={() => setProfileOpen(!profileOpen)}
+                className="flex items-center gap-3"
+              >
+                <div className="h-9 w-9 rounded-full bg-gray-300 overflow-hidden">
+                  <div className="flex h-full w-full items-center justify-center bg-amber-100 text-sm font-semibold text-[#1B2A4A]">
+                    A
+                  </div>
                 </div>
-              </div>
-              <div className="text-right">
-                <p className="text-sm font-medium text-white">Name Here</p>
-                <p className="text-xs text-white/60">Admin</p>
-              </div>
-              <ChevronDown size={14} className="text-white/60" />
+                <div className="text-right">
+                  <p className="text-sm font-medium text-white">Name Here</p>
+                  <p className="text-xs text-white/60">Admin</p>
+                </div>
+                <ChevronDown size={14} className={`text-white/60 transition-transform ${profileOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {profileOpen && (
+                <div className="absolute right-0 top-12 z-50 w-44 rounded-lg border border-[#E5E7EB] bg-white py-1 shadow-lg">
+                  <Link
+                    href="/admin/profile"
+                    onClick={() => setProfileOpen(false)}
+                    className="block px-4 py-2.5 text-sm text-[#1B2A4A] hover:bg-[#F3F4F6]"
+                  >
+                    Profile
+                  </Link>
+                  <Link
+                    href="/admin-login"
+                    onClick={() => setProfileOpen(false)}
+                    className="block px-4 py-2.5 text-sm text-red-500 hover:bg-[#F3F4F6]"
+                  >
+                    Logout
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </header>
