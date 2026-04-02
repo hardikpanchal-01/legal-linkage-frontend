@@ -125,7 +125,7 @@ export default function ReviewDetail() {
               <span className="text-sm text-[#6B7280]">/5.0</span>
             </div>
           </div>
-          <p className="mb-6 text-xs text-[#6B7280]">ClientLawyerLink.com Platform Feedback</p>
+          <p className="mb-6 text-xs text-[#6B7280]">LawLinkage™.com Platform Feedback</p>
 
           <div className="space-y-5">
             {config.reviews.map((review) => (

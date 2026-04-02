@@ -29,8 +29,8 @@ export default function ProviderType() {
         {/* Logo */}
         <div className="mb-6">
           <Image
-            src="/images/logo.svg"
-            alt="ClientLawyerLink Logo"
+            src="/images/logo.png"
+            alt="LawLinkage™ Logo"
             width={70}
             height={84}
             priority

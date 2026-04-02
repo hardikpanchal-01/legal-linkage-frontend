@@ -66,8 +66,8 @@ export default function ProviderOrganization() {
         {/* Logo */}
         <div className="mb-5">
           <Image
-            src="/images/logo.svg"
-            alt="ClientLawyerLink Logo"
+            src="/images/logo.png"
+            alt="LawLinkage™ Logo"
             width={60}
             height={72}
             priority

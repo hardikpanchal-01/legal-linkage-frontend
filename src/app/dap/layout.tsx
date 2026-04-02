@@ -39,12 +39,12 @@ export default function DAPLayout({
       {/* Sidebar */}
       <aside className="w-[220px] flex-shrink-0 flex flex-col bg-[#1B2A4A] text-white">
         {/* Logo */}
-        <div className="flex items-center gap-3 px-5 py-5">
-          <Image src="/images/logo.svg" alt="Logo" width={48} height={48} />
-          <div>
-            <h1 className="text-lg font-bold leading-tight">ClientLawyerLink</h1>
-            <p className="text-[9px] text-white/60 leading-tight">Vetted &amp; Transparent</p>
+        <div className="flex flex-col items-center px-4 pt-5 pb-4">
+          <div className="flex size-20 items-center justify-center rounded-full bg-white shadow-lg overflow-hidden">
+            <Image src="/images/logo.png" alt="LawLinkage" width={160} height={160} className="object-cover scale-150" />
           </div>
+          <p className="mt-2 text-base font-bold leading-tight text-white">LawLinkage&trade;</p>
+          <p className="text-[10px] leading-tight text-white/50">Transparent legal help, connected.</p>
         </div>
 
         {/* Navigation */}

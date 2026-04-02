@@ -9,8 +9,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "ClientLawyerLink - Legal Linkage",
-  description: "A professional network connecting verified clients with vetted lawyers across Canada",
+  title: "LawLinkage™ - Transparent legal help, connected.",
+  description: "Find your lawyer with peace of mind. A professional network connecting verified clients with vetted lawyers across Canada.",
 };
 
 export default function RootLayout({

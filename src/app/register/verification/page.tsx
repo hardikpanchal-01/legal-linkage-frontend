@@ -59,8 +59,8 @@ export default function Verification() {
         {/* Logo */}
         <div className="mb-5">
           <Image
-            src="/images/logo.svg"
-            alt="ClientLawyerLink Logo"
+            src="/images/logo.png"
+            alt="LawLinkage™ Logo"
             width={60}
             height={72}
             priority
@@ -154,7 +154,7 @@ export default function Verification() {
           <div className="flex items-center gap-3 border-b border-[#E5E7EB] px-6 py-4">
             <div className="flex size-10 items-center justify-center rounded-full bg-[#1B2A4A]">
               <Image
-                src="/images/logo.svg"
+                src="/images/logo.png"
                 alt="Logo"
                 width={24}
                 height={28}

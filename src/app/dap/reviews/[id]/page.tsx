@@ -60,7 +60,7 @@ export default function DAPReviewDetail() {
             <h2 className="text-lg font-bold text-[#1B2A4A]">Platform Experience Review</h2>
             <div className="flex items-center gap-1 rounded-full bg-[#FFF8E7] px-3 py-1.5"><Star className="size-4 fill-[#E9A319] text-[#E9A319]" /><span className="text-lg font-bold text-[#1B2A4A]">4.8</span><span className="text-sm text-[#6B7280]">/5.0</span></div>
           </div>
-          <p className="mb-6 text-xs text-[#6B7280]">ClientLawyerLink.com Platform Feedback</p>
+          <p className="mb-6 text-xs text-[#6B7280]">LawLinkage™.com Platform Feedback</p>
           <div className="space-y-5">
             {platformReviews.map((r) => (
               <div key={r.label} className="flex items-center justify-between"><span className="text-sm text-[#1B2A4A]">{r.label}</span><div className="flex items-center gap-2"><StarRating rating={r.rating} /><span className="text-sm font-medium text-[#1B2A4A]">{r.rating.toFixed(1)}</span></div></div>
@@ -70,7 +70,7 @@ export default function DAPReviewDetail() {
 
         <div className="rounded-xl bg-white p-6 shadow-sm">
           <h2 className="mb-4 text-lg font-bold text-[#1B2A4A]">Platform Feedback</h2>
-          <div className="rounded-lg bg-[#F9FAFB] p-4"><p className="text-sm leading-relaxed text-[#4A4A4A]">The ClientLawyerLink platform made finding a lawyer incredibly easy. The matching algorithm connected me with Mr. Chen who was perfect for my case. The payment system with the trust account was transparent and gave me confidence. The only improvement I&apos;d suggest is adding more payment options like cryptocurrency. Overall, a fantastic service that modernizes the legal industry.</p></div>
+          <div className="rounded-lg bg-[#F9FAFB] p-4"><p className="text-sm leading-relaxed text-[#4A4A4A]">The LawLinkage™ platform made finding a lawyer incredibly easy. The matching algorithm connected me with Mr. Chen who was perfect for my case. The payment system with the trust account was transparent and gave me confidence. The only improvement I&apos;d suggest is adding more payment options like cryptocurrency. Overall, a fantastic service that modernizes the legal industry.</p></div>
         </div>
       </div>
     );

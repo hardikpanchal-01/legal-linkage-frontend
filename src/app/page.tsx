@@ -40,8 +40,8 @@ export default function SelectRole() {
         {/* Logo */}
         <div className="mb-6">
           <Image
-            src="/images/logo.svg"
-            alt="ClientLawyerLink Logo"
+            src="/images/logo.png"
+            alt="LawLinkage™ Logo"
             width={70}
             height={84}
             priority
@@ -52,7 +52,7 @@ export default function SelectRole() {
         <h1 className="mb-3 text-center text-2xl font-bold text-[#1B2A4A] sm:text-3xl">
           Welcome to
           <br />
-          ClientLawyerLink.com
+          LawLinkage™.com
         </h1>
         <p className="mb-8 max-w-md text-center text-sm leading-relaxed text-[#4A4A4A] sm:text-base">
           This platform is a professional network that connects verified

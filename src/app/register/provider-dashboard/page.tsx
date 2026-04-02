@@ -19,12 +19,11 @@ export default function ProviderDashboard() {
       {/* Header / Navbar - full width */}
       <header className="w-full bg-[#1B2A4A]">
         <div className="flex items-center justify-between px-6 py-3 sm:px-10">
-          <div className="flex items-center gap-3">
-            <Image src="/images/logo.svg" alt="Logo" width={40} height={48} />
+          <div className="flex items-center gap-2.5">
+            <Image src="/images/logo.png" alt="LawLinkage" width={36} height={36} className="rounded-md bg-white p-1" />
             <div>
-              <p className="text-base font-bold text-white">LawLinkup</p>
-              <p className="text-[10px] font-medium text-[#E9A319]">Trust by design</p>
-              <p className="text-[9px] text-white/70">Where client, Lawyer, justice connect</p>
+              <p className="text-sm font-bold leading-tight text-white">LawLinkage&trade;</p>
+              <p className="text-[9px] leading-tight text-white/50">Transparent legal help, connected.</p>
             </div>
           </div>
           <div className="flex items-center gap-5">

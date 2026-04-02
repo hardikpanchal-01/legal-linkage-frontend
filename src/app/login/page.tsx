@@ -25,7 +25,7 @@ export default function Login() {
       <div className="flex flex-1 flex-col items-center justify-center px-4 pb-8 sm:px-8">
         {/* Logo */}
         <div className="mb-5">
-          <Image src="/images/logo.svg" alt="Logo" width={60} height={72} priority />
+          <Image src="/images/logo.png" alt="Logo" width={60} height={72} priority />
         </div>
 
         {/* Heading */}

@@ -266,10 +266,10 @@ export default function ReportsAnalysisPage() {
                 {/* Brand Header */}
                 <div className="mb-6 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <Image src="/images/logo.svg" alt="Logo" width={36} height={36} />
+                    <Image src="/images/logo.png" alt="Logo" width={36} height={36} />
                     <div>
-                      <p className="text-sm font-bold text-[#1B2A4A]">ClientLawyerLink</p>
-                      <p className="text-[10px] text-gray-400">Vetted &amp; Transparent</p>
+                      <p className="text-sm font-bold text-[#1B2A4A]">LawLinkage™</p>
+                      <p className="text-[10px] text-gray-400">Transparent legal help, connected.</p>
                     </div>
                   </div>
                   <h3 className="text-base font-bold text-[#1B2A4A]">Platform based reports</h3>

@@ -46,7 +46,7 @@ export default function ProviderVerificationOptional() {
     <div className="flex min-h-screen flex-col bg-gradient-to-b from-[#FFF8E7] to-[#FDF5E6]">
       <div className="flex flex-1 flex-col items-center px-4 pt-10 pb-8 sm:px-8">
         <div className="mb-5">
-          <Image src="/images/logo.svg" alt="Logo" width={60} height={72} priority />
+          <Image src="/images/logo.png" alt="Logo" width={60} height={72} priority />
         </div>
 
         <h1 className="mb-8 text-center text-2xl font-bold text-[#1B2A4A] sm:text-3xl">
@@ -137,7 +137,7 @@ export default function ProviderVerificationOptional() {
           <DialogTitle className="sr-only">Vulnerable Sector Check</DialogTitle>
 
           <div className="flex flex-col items-center">
-            <Image src="/images/logo.svg" alt="Logo" width={50} height={60} />
+            <Image src="/images/logo.png" alt="Logo" width={50} height={60} />
 
             <h2 className="mt-4 mb-2 text-center text-xl font-bold text-[#1B2A4A]">
               Getting Your Vulnerable Sector Check (VSC)

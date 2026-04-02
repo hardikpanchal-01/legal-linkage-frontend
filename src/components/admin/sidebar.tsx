@@ -55,12 +55,10 @@ export function AdminSidebar() {
   return (
     <aside className="flex h-screen w-56 flex-col bg-[#1B2A4A] text-white">
       {/* Logo */}
-      <div className="flex items-center gap-2.5 px-4 py-5">
-        <Image src="/images/logo.svg" alt="Logo" width={32} height={38} />
-        <div>
-          <p className="text-sm font-bold text-white">ClientLawyerLink</p>
-          <p className="text-[9px] text-white/60">Vetted &amp; Transparent</p>
-        </div>
+      <div className="flex flex-col items-center px-4 pt-5 pb-4">
+        <Image src="/images/icon.jpg" alt="LawLinkage" width={70} height={70} className="rounded-full object-contain" />
+        <p className="mt-2 text-base font-bold leading-tight text-white">LawLinkage&trade;</p>
+        <p className="text-[10px] leading-tight text-white/50">Transparent legal help, connected.</p>
       </div>
 
       {/* Main nav */}

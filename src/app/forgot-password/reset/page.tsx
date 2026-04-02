@@ -23,7 +23,7 @@ export default function ResetPassword() {
     <div className="flex min-h-screen flex-col bg-gradient-to-b from-[#FFF8E7] to-[#FDF5E6]">
       <div className="flex flex-1 flex-col items-center justify-center px-4 pb-8 sm:px-8">
         <div className="mb-5">
-          <Image src="/images/logo.svg" alt="Logo" width={60} height={72} priority />
+          <Image src="/images/logo.png" alt="Logo" width={60} height={72} priority />
         </div>
 
         <h1 className="mb-2 text-center text-2xl font-bold text-[#1B2A4A] sm:text-3xl">
